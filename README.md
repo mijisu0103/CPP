@@ -1,2 +1,2 @@
-# CPP
+# C++ Programming Language
 C++
