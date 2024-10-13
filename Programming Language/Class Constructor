@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+class Student
+{
+private:
+    int number; // Private member variable for student number
+    string name; // Private member variable for student name
+    int kor; // Private member variable for Korean score
+    int eng; // Private member variable for English score
+    int mat; // Private member variable for Math score
+
+public:
+    void showData(); // Member function to display student data
+
+public:
+    // Constructor function for the class
+    Student(); // Default constructor
+    // Overloading (creating functions with the same name but different parameters)
+    Student(int _number, string _name, int k, int e, int m); // Parameterized constructor
+
+    ~Student(); // Destructor that is called when the object goes out of scope
+};
+
+// Definition of the showData function
+void Student::showData()
+{
+    cout << "Student Number: " << number << endl; // Output student number
+    cout << "Name: " << name << endl; // Output student name
+    cout << "Korean: " << kor << endl; // Output Korean score
+    cout << "English: " << eng << endl; // Output English score
+    cout << "Math: " << mat << endl; // Output Math score
+}
+
+// Default constructor definition
+Student::Student()
+{
+    cout << "I am the constructor." << endl; // Message when constructor is called
+    number = 1001; // Default student number
+    name = "Hong Gildong"; // Default name
+    kor = 100; // Default Korean score
+    eng = 90; // Default English score
+    mat = 80; // Default Math score
+}
+
+// Parameterized constructor definition
+Student::Student(int _number, string _name, int k, int e, int m)
+{
+    number = _number; // Set student number
+    name = _name; // Set student name
+    kor = k; // Set Korean score
+    eng = e; // Set English score
+    mat = m; // Set Math score
+}
+
+// Destructor definition
+Student::~Student()
+{
+    cout << "I am the destructor." << endl; // Message when destructor is called
+}
+
+void main()
+{
+    Student kim = Student(1002, "Kim Cheolsu", 100, 90, 92); // Create object, calling parameterized constructor
+
+    kim.showData(); // Display student data
+}
